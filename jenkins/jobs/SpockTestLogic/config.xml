@@ -1,0 +1,93 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1537.v66038d35fc76">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2255.v56a_15e805f12"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2255.v56a_15e805f12">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers>
+        <hudson.triggers.TimerTrigger>
+          <spec>H/5 * * * *</spec>
+        </hudson.triggers.TimerTrigger>
+      </triggers>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4117.vc0f3c515a_a_a_0">
+    <script>pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as &quot;M3&quot; and add it to the path.
+        maven &quot;M3&quot;
+    }
+
+    stages {
+        stage(&apos;Build&apos;) {
+            steps {
+                // Get some code from a GitHub repository
+                git url: &apos;https://github.com/lof000/appd-sample-apps-sqs.git&apos;, branch: &apos;main&apos;
+
+                // Copia a dependência do OpenTelemetry Maven Extension
+                sh &quot;mvn dependency:copy -Dartifact=io.opentelemetry.contrib:opentelemetry-maven-extension:1.46.0-alpha&quot;
+
+                // Run Maven on a Unix agent com OpenTelemetry configurado
+                sh &quot;mvn -Dmaven.ext.class.path=target/dependency/opentelemetry-maven-extension-1.46.0-alpha.jar clean package&quot;
+            }
+
+            post {
+                // Se o Maven executou os testes, mesmo que alguns falhem, grava os resultados e arquiva o JAR
+                success {
+                            sh &quot;echo thats all folks!&quot;
+                }
+            }
+        }
+        stage(&apos;Parallel Tests&apos;) {
+            parallel {
+                stage(&apos;Unit Tests&apos;) {
+                    steps {
+                        // Executa apenas os testes unitários
+                        sh &quot;mvn test&quot;
+                    }
+                    post {
+                        always {
+                            // Publica resultados dos testes unitários
+                            sh &quot;echo thats all folks!&quot;
+                        }
+                    }
+                }
+                stage(&apos;Static Code Analysis&apos;) {
+                    steps {
+                        // Executa análise estática com Checkstyle
+                        //sh &quot;mvn checkstyle:check&quot;
+                        sh &quot;echo ja era&quot;
+                        
+                        sh &quot;docker run hello-world&quot;
+                        
+                        sh &quot;docker container prune -f&quot;
+                        
+                        sh &quot;docker rmi hello-world:latest&quot;
+
+                    }
+                    post {
+                        always {
+                            sh &quot;echo thats all folks!&quot;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

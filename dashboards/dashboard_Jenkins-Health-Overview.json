@@ -1,0 +1,1597 @@
+{
+  "chartExports": [
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [],
+        "chartLinks": [],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "",
+        "id": "GwidZB-A4AA",
+        "importOf": "GvCJWdQAwAY",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Last Build Duration (ms)",
+        "options": {
+          "colorBy": "Dimension",
+          "colorScale2": null,
+          "hideMissingValues": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": false,
+                "property": "AWSUniqueId"
+              },
+              {
+                "enabled": false,
+                "property": "buildable"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.account.id"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.availability_zone"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.platform"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.provider"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.region"
+              },
+              {
+                "enabled": false,
+                "property": "deployment.environment"
+              },
+              {
+                "enabled": false,
+                "property": "host.id"
+              },
+              {
+                "enabled": false,
+                "property": "host.image.id"
+              },
+              {
+                "enabled": false,
+                "property": "host.name"
+              },
+              {
+                "enabled": false,
+                "property": "host.type"
+              },
+              {
+                "enabled": true,
+                "property": "jenkins_job"
+              },
+              {
+                "enabled": false,
+                "property": "sf_originatingMetric"
+              },
+              {
+                "enabled": false,
+                "property": "os.type"
+              },
+              {
+                "enabled": false,
+                "property": "otelcol.service.mode"
+              },
+              {
+                "enabled": false,
+                "property": "sf_metric"
+              },
+              {
+                "enabled": false,
+                "property": "repo"
+              },
+              {
+                "enabled": false,
+                "property": "server.port"
+              },
+              {
+                "enabled": false,
+                "property": "service.instance.id"
+              },
+              {
+                "enabled": false,
+                "property": "service.name"
+              },
+              {
+                "enabled": false,
+                "property": "url.scheme"
+              }
+            ]
+          },
+          "maximumPrecision": null,
+          "noDataOptions": {
+            "linkText": null,
+            "linkUrl": null,
+            "noDataMessage": null
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": 0,
+            "minimumResolution": 0,
+            "timezone": null
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "default_jenkins_builds_last_build_duration_milliseconds",
+              "label": "A",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": "Millisecond",
+              "yAxis": 0
+            }
+          ],
+          "refreshInterval": null,
+          "secondaryVisualization": "Sparkline",
+          "sortBy": "-value",
+          "time": {
+            "range": 900000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "type": "List",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('default_jenkins_builds_last_build_duration_milliseconds', filter=filter('environment', '*') and filter('service.name', '*'), rollup='sum').publish(label='A')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [],
+        "chartLinks": [],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "",
+        "id": "Gwij6jyA0AA",
+        "importOf": "GvCJWdQAwA0",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Failed Jobs",
+        "options": {
+          "areaChartOptions": {
+            "showDataMarkers": false
+          },
+          "axes": [
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            },
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            }
+          ],
+          "axisPrecision": null,
+          "colorBy": "Dimension",
+          "defaultPlotType": "AreaChart",
+          "eventPublishLabelOptions": [],
+          "histogramChartOptions": {
+            "colorThemeIndex": 16
+          },
+          "includeZero": false,
+          "legendOptions": {
+            "fields": null
+          },
+          "lineChartOptions": {
+            "showDataMarkers": false
+          },
+          "noDataOptions": {
+            "linkText": null,
+            "linkUrl": null,
+            "noDataMessage": null
+          },
+          "onChartLegendOptions": {
+            "dimensionInLegend": "jenkins_job",
+            "showLegend": true
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": 0,
+            "minimumResolution": 0,
+            "timezone": null
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "default_jenkins_builds_failed_build_count_total - Sum by jenkins_job",
+              "label": "A",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "showEventLines": false,
+          "stacked": false,
+          "time": {
+            "range": 900000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "type": "TimeSeriesChart",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('default_jenkins_builds_failed_build_count_total', filter=filter('environment', '*') and filter('service.name', '*')).sum(by=['jenkins_job']).publish(label='A')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [],
+        "chartLinks": [],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "",
+        "id": "Gwij6jyA0AE",
+        "importOf": "GvCJWdQAwAo",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Uptime",
+        "options": {
+          "colorBy": "Dimension",
+          "colorScale": null,
+          "colorScale2": null,
+          "maximumPrecision": null,
+          "noDataOptions": {
+            "linkText": null,
+            "linkUrl": null,
+            "noDataMessage": null
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": 0,
+            "minimumResolution": 0,
+            "timezone": null
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "default_jenkins_uptime",
+              "label": "A",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": "Millisecond",
+              "yAxis": 0
+            }
+          ],
+          "refreshInterval": null,
+          "secondaryVisualization": "None",
+          "showSparkLine": false,
+          "time": {
+            "range": 900000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "timestampHidden": false,
+          "type": "SingleValue",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('default_jenkins_uptime', filter=filter('environment', '*') and filter('service.name', '*')).publish(label='A')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [],
+        "chartLinks": [],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "",
+        "id": "Gwij6jyA0AI",
+        "importOf": "GvCJWdQAwAc",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Maven Top Failed (1h)",
+        "options": {
+          "colorBy": "Dimension",
+          "colorScale2": null,
+          "hideMissingValues": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": true,
+                "property": "attributes.jenkins.pipeline.step.type"
+              },
+              {
+                "enabled": false,
+                "property": "sf_originatingMetric"
+              },
+              {
+                "enabled": false,
+                "property": "sf_metric"
+              },
+              {
+                "enabled": true,
+                "property": "jenkins.pipeline.step.name"
+              }
+            ]
+          },
+          "maximumPrecision": null,
+          "noDataOptions": {
+            "linkText": null,
+            "linkUrl": null,
+            "noDataMessage": null
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": 0,
+            "minimumResolution": 0,
+            "timezone": null
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "jenkins.pipeline.step.status - Sum by attributes.jenkins.pipeline.step.type - Sum(1h)",
+              "label": "A",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "refreshInterval": null,
+          "secondaryVisualization": "Sparkline",
+          "sortBy": "-value",
+          "time": {
+            "range": 900000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "type": "List",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('jenkins.calls', filter=filter('status.code', 'STATUS_CODE_ERROR')).sum(over='1h').sum(by=['jenkins.pipeline.step.name']).top(count=10).publish(label='A')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [],
+        "chartLinks": [],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "",
+        "id": "Gwij6jyA0AM",
+        "importOf": "GvhdqeOAwAU",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Failed Jobs",
+        "options": {
+          "colorBy": "Dimension",
+          "colorScale": null,
+          "colorScale2": null,
+          "maximumPrecision": null,
+          "noDataOptions": {
+            "linkText": null,
+            "linkUrl": null,
+            "noDataMessage": null
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": 0,
+            "minimumResolution": 0,
+            "timezone": null
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "default_jenkins_builds_failed_build_count_total",
+              "label": "A",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "refreshInterval": null,
+          "secondaryVisualization": "None",
+          "showSparkLine": false,
+          "time": {
+            "range": 900000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "timestampHidden": false,
+          "type": "SingleValue",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('default_jenkins_builds_failed_build_count_total', rollup='count').publish(label='A')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [],
+        "chartLinks": [],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "",
+        "id": "Gwij6jyA0AQ",
+        "importOf": "GvCJWdQAwAM",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Free Executors",
+        "options": {
+          "areaChartOptions": {
+            "showDataMarkers": true
+          },
+          "axes": [
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            },
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            }
+          ],
+          "axisPrecision": null,
+          "colorBy": "Dimension",
+          "defaultPlotType": "AreaChart",
+          "eventPublishLabelOptions": [],
+          "histogramChartOptions": {
+            "colorThemeIndex": 16
+          },
+          "includeZero": false,
+          "legendOptions": {
+            "fields": null
+          },
+          "lineChartOptions": {
+            "showDataMarkers": true
+          },
+          "noDataOptions": {
+            "linkText": null,
+            "linkUrl": null,
+            "noDataMessage": null
+          },
+          "onChartLegendOptions": {
+            "dimensionInLegend": null,
+            "showLegend": false
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": 0,
+            "minimumResolution": 0,
+            "timezone": null
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "jenkins_executor_free_value",
+              "label": "A",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "jenkins_executor_count_value",
+              "label": "B",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "showEventLines": false,
+          "stacked": false,
+          "time": {
+            "range": 900000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "type": "TimeSeriesChart",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('jenkins_executor_free_value', filter=filter('environment', '*') and filter('service.name', '*'), rollup='average').publish(label='A')\nB = data('jenkins_executor_count_value', rollup='max').publish(label='B')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [],
+        "chartLinks": [],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "",
+        "id": "Gwij6jyA0AY",
+        "importOf": "GvhauozA0AE",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Deployment Frequency",
+        "options": {
+          "colorBy": "Dimension",
+          "colorScale2": null,
+          "hideMissingValues": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": false,
+                "property": "AWSUniqueId"
+              },
+              {
+                "enabled": false,
+                "property": "buildable"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.account.id"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.availability_zone"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.platform"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.provider"
+              },
+              {
+                "enabled": false,
+                "property": "cloud.region"
+              },
+              {
+                "enabled": false,
+                "property": "deployment.environment"
+              },
+              {
+                "enabled": false,
+                "property": "host.id"
+              },
+              {
+                "enabled": false,
+                "property": "host.image.id"
+              },
+              {
+                "enabled": false,
+                "property": "host.name"
+              },
+              {
+                "enabled": false,
+                "property": "host.type"
+              },
+              {
+                "enabled": true,
+                "property": "jenkins_job"
+              },
+              {
+                "enabled": false,
+                "property": "sf_originatingMetric"
+              },
+              {
+                "enabled": false,
+                "property": "os.type"
+              },
+              {
+                "enabled": false,
+                "property": "otelcol.service.mode"
+              },
+              {
+                "enabled": false,
+                "property": "sf_metric"
+              },
+              {
+                "enabled": false,
+                "property": "repo"
+              },
+              {
+                "enabled": false,
+                "property": "server.port"
+              },
+              {
+                "enabled": false,
+                "property": "service.instance.id"
+              },
+              {
+                "enabled": false,
+                "property": "service.name"
+              },
+              {
+                "enabled": false,
+                "property": "url.scheme"
+              }
+            ]
+          },
+          "maximumPrecision": null,
+          "noDataOptions": {
+            "linkText": null,
+            "linkUrl": null,
+            "noDataMessage": null
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": 0,
+            "minimumResolution": 0,
+            "timezone": null
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "default_jenkins_builds_success_build_count_total - Sum(Dashboard window)",
+              "label": "A",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "A/24",
+              "label": "D",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "refreshInterval": null,
+          "secondaryVisualization": "Sparkline",
+          "sortBy": "",
+          "time": {
+            "range": 900000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "type": "List",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "A = data('default_jenkins_builds_success_build_count_total', rollup='delta').sum(over=Args.get('ui.dashboard_window', '15m')).publish(label='A', enable=False)\nD = (A/24).publish(label='D')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [
+          "F-GmkTIAwAE"
+        ],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "Percentile distribution across active hosts with agent installed",
+        "id": "GwimsfVAwAA",
+        "importOf": "F7AU0yYAcAA",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Disk utilization (%)",
+        "options": {
+          "areaChartOptions": {
+            "showDataMarkers": false
+          },
+          "axes": [
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            },
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            }
+          ],
+          "axisPrecision": null,
+          "colorBy": "Dimension",
+          "defaultPlotType": "AreaChart",
+          "eventPublishLabelOptions": [
+            {
+              "displayName": "Autodetect alerts",
+              "label": "A",
+              "paletteIndex": null
+            }
+          ],
+          "histogramChartOptions": {
+            "colorThemeIndex": 16
+          },
+          "includeZero": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": true,
+                "property": "sf_originatingMetric"
+              },
+              {
+                "enabled": true,
+                "property": "sf_metric"
+              },
+              {
+                "enabled": true,
+                "property": "aws_instance_id"
+              },
+              {
+                "enabled": true,
+                "property": "k8s.cluster.name"
+              },
+              {
+                "enabled": true,
+                "property": "host.image.id"
+              },
+              {
+                "enabled": true,
+                "property": "os.type"
+              },
+              {
+                "enabled": true,
+                "property": "type"
+              },
+              {
+                "enabled": true,
+                "property": "AWSUniqueId"
+              },
+              {
+                "enabled": true,
+                "property": "host.type"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.availability_zone"
+              },
+              {
+                "enabled": true,
+                "property": "mountpoint"
+              },
+              {
+                "enabled": true,
+                "property": "mode"
+              },
+              {
+                "enabled": true,
+                "property": "host.name"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.platform"
+              },
+              {
+                "enabled": true,
+                "property": "host.id"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.region"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.provider"
+              },
+              {
+                "enabled": true,
+                "property": "k8s.node.name"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.account.id"
+              },
+              {
+                "enabled": true,
+                "property": "device"
+              },
+              {
+                "enabled": true,
+                "property": "deployment.environment"
+              },
+              {
+                "enabled": true,
+                "property": "state"
+              },
+              {
+                "enabled": true,
+                "property": "azure.resourcegroup.name"
+              },
+              {
+                "enabled": true,
+                "property": "azure.vm.name"
+              },
+              {
+                "enabled": true,
+                "property": "azure.vm.size"
+              },
+              {
+                "enabled": true,
+                "property": "azure_resource_id"
+              },
+              {
+                "enabled": true,
+                "property": "azure.vm.scaleset.name"
+              },
+              {
+                "enabled": true,
+                "property": "gcp_id"
+              }
+            ]
+          },
+          "lineChartOptions": {
+            "showDataMarkers": false
+          },
+          "noDataOptions": {
+            "linkText": "Get started with the OpenTelemetry Collector",
+            "linkUrl": "https://quickdraw.splunk.com/redirect/?product=Observability&location=awsec2.dashboard&version=current",
+            "noDataMessage": "No active metrics found. This chart requires the OpenTelemetry collector to be installed on your EC2 instances."
+          },
+          "onChartLegendOptions": {
+            "dimensionInLegend": "sf_metric",
+            "showLegend": true
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": 0,
+            "minimumResolution": 0,
+            "timezone": null
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "Used disk",
+              "label": "B",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": "%",
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Free disk",
+              "label": "C",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": "%",
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Disk utilization",
+              "label": "D",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": "%",
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Min",
+              "label": "E",
+              "paletteIndex": 14,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "P10",
+              "label": "F",
+              "paletteIndex": 15,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "P50",
+              "label": "G",
+              "paletteIndex": 2,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "P90",
+              "label": "H",
+              "paletteIndex": 9,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Max",
+              "label": "I",
+              "paletteIndex": 8,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "showEventLines": false,
+          "stacked": false,
+          "time": {
+            "range": 3600000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "type": "TimeSeriesChart",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "B = data('system.filesystem.usage', filter=filter('cloud.platform', 'aws_ec2', 'aws_eks') and filter('state', 'used')).publish(label='B', enable=False)\nC = data('system.filesystem.usage', filter=filter('cloud.platform', 'aws_ec2', 'aws_eks') and filter('state', 'free')).publish(label='C', enable=False)\nD = ((B/(B+C))*100).mean(by=['AWSUniqueId']).publish(label='D', enable=False)\nE = (D).min().publish(label='E')\nF = (D).percentile(pct=10).publish(label='F')\nG = (D).percentile(pct=50).publish(label='G')\nH = (D).percentile(pct=90).publish(label='H')\nI = (D).max().publish(label='I')\nA = alerts(autodetect_id='F6cykK5AYAA').publish(label='A')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [
+          "F-GidjuA4AA"
+        ],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "Percentile distribution across active hosts with agent installed",
+        "id": "Gwim81RA4AI",
+        "importOf": "EybTa9DAcAA",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "Memory utilization (%)",
+        "options": {
+          "areaChartOptions": {
+            "showDataMarkers": false
+          },
+          "axes": [
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": 120,
+              "min": 0
+            },
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            }
+          ],
+          "axisPrecision": null,
+          "colorBy": "Dimension",
+          "defaultPlotType": "AreaChart",
+          "eventPublishLabelOptions": [
+            {
+              "displayName": "Autodetect alerts",
+              "label": "A",
+              "paletteIndex": null
+            }
+          ],
+          "histogramChartOptions": {
+            "colorThemeIndex": 16
+          },
+          "includeZero": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": true,
+                "property": "sf_originatingMetric"
+              },
+              {
+                "enabled": true,
+                "property": "sf_metric"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.region"
+              },
+              {
+                "enabled": true,
+                "property": "host.image.id"
+              },
+              {
+                "enabled": true,
+                "property": "os.type"
+              },
+              {
+                "enabled": true,
+                "property": "AWSUniqueId"
+              },
+              {
+                "enabled": true,
+                "property": "host.type"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.availability_zone"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.provider"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.account.id"
+              },
+              {
+                "enabled": true,
+                "property": "host.name"
+              },
+              {
+                "enabled": true,
+                "property": "state"
+              },
+              {
+                "enabled": true,
+                "property": "cloud.platform"
+              },
+              {
+                "enabled": true,
+                "property": "host.id"
+              },
+              {
+                "enabled": true,
+                "property": "k8s.cluster.name"
+              },
+              {
+                "enabled": true,
+                "property": "deployment.environment"
+              },
+              {
+                "enabled": true,
+                "property": "k8s.node.name"
+              },
+              {
+                "enabled": true,
+                "property": "azure.resourcegroup.name"
+              },
+              {
+                "enabled": true,
+                "property": "azure.vm.name"
+              },
+              {
+                "enabled": true,
+                "property": "azure.vm.size"
+              },
+              {
+                "enabled": true,
+                "property": "azure_resource_id"
+              },
+              {
+                "enabled": true,
+                "property": "azure.vm.scaleset.name"
+              },
+              {
+                "enabled": true,
+                "property": "gcp_id"
+              },
+              {
+                "enabled": true,
+                "property": "telemetry.sdk.name"
+              },
+              {
+                "enabled": true,
+                "property": "telemetry.sdk.language"
+              },
+              {
+                "enabled": true,
+                "property": "telemetry.sdk.version"
+              },
+              {
+                "enabled": true,
+                "property": "service.name"
+              }
+            ]
+          },
+          "lineChartOptions": {
+            "showDataMarkers": false
+          },
+          "noDataOptions": {
+            "linkText": "Get started with the OpenTelemetry Collector",
+            "linkUrl": "https://quickdraw.splunk.com/redirect/?product=Observability&location=awsec2.dashboard&version=current",
+            "noDataMessage": "No active metrics found. This chart requires the OpenTelemetry collector to be installed on your EC2 instances."
+          },
+          "onChartLegendOptions": {
+            "dimensionInLegend": "sf_metric",
+            "showLegend": true
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": null,
+            "minimumResolution": 0,
+            "timezone": null
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "Memory usage",
+              "label": "H",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Memory total",
+              "label": "I",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Memory utilization",
+              "label": "J",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Min",
+              "label": "C",
+              "paletteIndex": 14,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": "%",
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "P10",
+              "label": "D",
+              "paletteIndex": 15,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": "%",
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Median",
+              "label": "E",
+              "paletteIndex": 2,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": "%",
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "P90",
+              "label": "F",
+              "paletteIndex": 9,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": "%",
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Max",
+              "label": "G",
+              "paletteIndex": 8,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": "%",
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "showEventLines": false,
+          "stacked": false,
+          "time": {
+            "range": 3600000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "type": "TimeSeriesChart",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "H = data('system.memory.usage', filter=filter('cloud.platform', 'aws_ec2', 'aws_eks') and filter('state', 'used')).sum(by=['host.name']).publish(label='H', enable=False)\nI = data('system.memory.usage', filter=filter('cloud.platform', 'aws_ec2', 'aws_eks') and filter('state', 'used', 'free', 'cached', 'buffered')).sum(by=['host.name']).publish(label='I', enable=False)\nJ = ((H/I)*100).publish(label='J', enable=False)\nC = (J).min().publish(label='C')\nD = (J).percentile(pct=10).publish(label='D')\nE = (J).percentile(pct=50).publish(label='E')\nF = (J).percentile(pct=90).publish(label='F')\nG = (J).max().publish(label='G')\nA = alerts(autodetect_id='F7vC_VlAYAI').publish(label='A')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [],
+        "chartLinks": [],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "",
+        "id": "Gwipi5dA4AA",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": ".",
+        "options": {
+          "markdown": "..",
+          "type": "Text"
+        },
+        "packageSpecifications": "",
+        "programText": "",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    },
+    {
+      "chart": {
+        "autoDetectRelatedDetectorIds": [
+          "F9G0EaCA4As"
+        ],
+        "created": 0,
+        "creator": null,
+        "customProperties": {},
+        "description": "Percentile distribution across all active hosts",
+        "id": "Gwiprk_AwAE",
+        "importOf": "EybTcZmAcAA",
+        "lastUpdated": 0,
+        "lastUpdatedBy": null,
+        "name": "CPU utilization (%)",
+        "options": {
+          "areaChartOptions": {
+            "showDataMarkers": false
+          },
+          "axes": [
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": 110,
+              "min": null
+            },
+            {
+              "highWatermark": null,
+              "highWatermarkLabel": null,
+              "label": "",
+              "lowWatermark": null,
+              "lowWatermarkLabel": null,
+              "max": null,
+              "min": null
+            }
+          ],
+          "axisPrecision": null,
+          "colorBy": "Dimension",
+          "defaultPlotType": "AreaChart",
+          "eventPublishLabelOptions": [
+            {
+              "displayName": "Autodetect alerts",
+              "label": "Autodetect alerts",
+              "paletteIndex": null
+            }
+          ],
+          "histogramChartOptions": {
+            "colorThemeIndex": 16
+          },
+          "includeZero": false,
+          "legendOptions": {
+            "fields": [
+              {
+                "enabled": true,
+                "property": "sf_metric"
+              }
+            ]
+          },
+          "lineChartOptions": {
+            "showDataMarkers": false
+          },
+          "noDataOptions": {
+            "linkText": null,
+            "linkUrl": null,
+            "noDataMessage": "Currently, no data is available for this chart."
+          },
+          "onChartLegendOptions": {
+            "dimensionInLegend": "sf_metric",
+            "showLegend": true
+          },
+          "programOptions": {
+            "disableSampling": false,
+            "maxDelay": null,
+            "minimumResolution": null,
+            "timezone": "UTC"
+          },
+          "publishLabelOptions": [
+            {
+              "displayName": "CPU utilization",
+              "label": "A",
+              "paletteIndex": null,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Min",
+              "label": "B",
+              "paletteIndex": 14,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "P10",
+              "label": "C",
+              "paletteIndex": 15,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Median",
+              "label": "D",
+              "paletteIndex": 2,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "P90",
+              "label": "E",
+              "paletteIndex": 9,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            },
+            {
+              "displayName": "Max",
+              "label": "F",
+              "paletteIndex": 8,
+              "plotType": null,
+              "valuePrefix": null,
+              "valueSuffix": null,
+              "valueUnit": null,
+              "yAxis": 0
+            }
+          ],
+          "showEventLines": false,
+          "stacked": false,
+          "time": {
+            "range": 3600000,
+            "rangeEnd": 0,
+            "type": "relative"
+          },
+          "type": "TimeSeriesChart",
+          "unitPrefix": "Metric"
+        },
+        "packageSpecifications": "",
+        "programText": "AB = alerts(autodetect_id='F7vDCq0AgAE').publish(label='Autodetect alerts')\nA = data('^aws.ec2.cpu.utilization', extrapolation='last_value', maxExtrapolations=5).publish(label='A', enable=False)\nB = (A).min().publish(label='B')\nC = (A).percentile(pct=10).publish(label='C')\nD = (A).percentile(pct=50).publish(label='D')\nE = (A).percentile(pct=90).publish(label='E')\nF = (A).max().publish(label='F')",
+        "relatedDetectorIds": [],
+        "tags": []
+      }
+    }
+  ],
+  "dashboardExport": {
+    "dashboard": {
+      "authorizedWriters": null,
+      "chartDensity": "DEFAULT",
+      "charts": [
+        {
+          "chartId": "Gwij6jyA0AQ",
+          "column": 7,
+          "height": 1,
+          "row": 0,
+          "width": 5
+        },
+        {
+          "chartId": "Gwij6jyA0AE",
+          "column": 0,
+          "height": 1,
+          "row": 0,
+          "width": 2
+        },
+        {
+          "chartId": "GwidZB-A4AA",
+          "column": 2,
+          "height": 1,
+          "row": 0,
+          "width": 5
+        },
+        {
+          "chartId": "Gwij6jyA0AY",
+          "column": 6,
+          "height": 1,
+          "row": 1,
+          "width": 3
+        },
+        {
+          "chartId": "Gwij6jyA0AM",
+          "column": 0,
+          "height": 1,
+          "row": 1,
+          "width": 2
+        },
+        {
+          "chartId": "Gwij6jyA0AI",
+          "column": 9,
+          "height": 1,
+          "row": 1,
+          "width": 3
+        },
+        {
+          "chartId": "Gwij6jyA0AA",
+          "column": 2,
+          "height": 1,
+          "row": 1,
+          "width": 4
+        },
+        {
+          "chartId": "GwimsfVAwAA",
+          "column": 8,
+          "height": 1,
+          "row": 2,
+          "width": 4
+        },
+        {
+          "chartId": "Gwim81RA4AI",
+          "column": 4,
+          "height": 1,
+          "row": 2,
+          "width": 4
+        },
+        {
+          "chartId": "Gwiprk_AwAE",
+          "column": 0,
+          "height": 1,
+          "row": 2,
+          "width": 4
+        },
+        {
+          "chartId": "Gwipi5dA4AA",
+          "column": 0,
+          "height": 1,
+          "row": 3,
+          "width": 12
+        }
+      ],
+      "created": 0,
+      "creator": null,
+      "customProperties": null,
+      "description": "",
+      "discoveryOptions": null,
+      "eventOverlays": null,
+      "filters": {
+        "sources": [],
+        "time": {
+          "end": "Now",
+          "start": "-1h"
+        },
+        "variables": [
+          {
+            "alias": "environment",
+            "applyIfExists": true,
+            "description": "",
+            "preferredSuggestions": [],
+            "property": "environment",
+            "propertyMappings": [
+              "environment"
+            ],
+            "replaceOnly": true,
+            "required": true,
+            "restricted": false,
+            "value": [
+              "*"
+            ]
+          },
+          {
+            "alias": "service.name",
+            "applyIfExists": true,
+            "description": "",
+            "preferredSuggestions": [],
+            "property": "service.name",
+            "propertyMappings": [
+              "service.name"
+            ],
+            "replaceOnly": true,
+            "required": true,
+            "restricted": false,
+            "value": [
+              "*"
+            ]
+          }
+        ]
+      },
+      "groupId": "GwijyC_AwAA",
+      "groupName": "ledeoliv@cisco.com",
+      "id": "Gwij6jyA0Ac",
+      "importOf": "GvCJWdQAwA8",
+      "lastUpdated": 0,
+      "lastUpdatedBy": null,
+      "maxDelayOverride": null,
+      "name": "Jenkins-Health-Overview",
+      "permissions": null,
+      "selectedEventOverlays": [],
+      "tags": []
+    }
+  },
+  "hashCode": -1489777893,
+  "id": "Gwij6jyA0Ac",
+  "modelVersion": 1,
+  "packageType": "DASHBOARD"
+}

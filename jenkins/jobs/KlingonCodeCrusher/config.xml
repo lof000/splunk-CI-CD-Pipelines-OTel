@@ -1,0 +1,66 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1537.v66038d35fc76">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2255.v56a_15e805f12"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2255.v56a_15e805f12">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers>
+        <hudson.triggers.TimerTrigger>
+          <spec>*/5 * * * *</spec>
+        </hudson.triggers.TimerTrigger>
+      </triggers>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4117.vc0f3c515a_a_a_0">
+    <script>pipeline {
+    agent any
+
+    tools {
+        // Install the Maven version configured as &quot;M3&quot; and add it to the path.
+        maven &quot;M3&quot;
+    }
+
+    stages {
+        stage(&apos;Build&apos;) {
+            steps {
+                // Get some code from a GitHub repository
+                git &apos;https://github.com/jglick/simple-maven-project-with-tests.git&apos;
+
+                //
+                sh &quot;mvn dependency:copy -Dartifact=io.opentelemetry.contrib:opentelemetry-maven-extension:1.46.0-alpha&quot;
+
+                // Run Maven on a Unix agent.
+                sh &quot;mvn -Dmaven.ext.class.path=target/dependency/opentelemetry-maven-extension-1.46.0-alpha.jar clean package&quot;
+
+
+
+                // To run Maven on a Windows agent, use
+                // bat &quot;mvn -Dmaven.test.failure.ignore=true clean package&quot;
+            }
+
+            post {
+                // If Maven was able to run the tests, even if some of the test
+                // failed, record the test results and archive the jar file.
+                success {
+                    junit &apos;**/target/surefire-reports/TEST-*.xml&apos;
+                    archiveArtifacts &apos;target/*.jar&apos;
+                }
+            }
+        }
+    }
+}
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
