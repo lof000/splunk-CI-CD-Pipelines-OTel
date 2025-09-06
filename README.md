@@ -76,6 +76,8 @@ Import one of the sample jobs from the repository’s folder or use your own to 
 ## Dashboards
 This repository includes sample dashboards to help you start observing your Jenkins environment.
 
+![dashboard](img/dashboard.png)
+
 ## References
 - **Splunk Blog**: [Jenkins OpenTelemetry Observability](https://www.splunk.com/en_us/blog/devops/jenkins-opentelemetry-observability.html)
 - **Splunk Repository**: [splunk-jenkins-otel](https://github.com/splunk/splunk-jenkins-otel)
@@ -83,6 +85,6 @@ This repository includes sample dashboards to help you start observing your Jenk
 - **Jenkins OpenTelemetry Plugin**: [Jenkins OTel Plugin](https://plugins.jenkins.io/opentelemetry/)
 
 ## Contact
-For questions, reach out to ledeoliv (J3nkinsDemo#0176).
+For questions, reach out to Leandro or open an issue
 
 </xaiArtifact>
